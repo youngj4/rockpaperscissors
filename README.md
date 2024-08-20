@@ -34,20 +34,21 @@ WHILE roundCount < 5
     FOR each playRound
         SET getHumanChoice to input value
         SET getComputerChoice to random value
-        IF humanChoice = rock and computerChoice = scissors
+        IF humanChoice === rock and computerChoice === scissors
             INCREMENT humanScore
-        IF humanChoice = scissors and computerChoice = rock
+        IF humanChoice === scissors and computerChoice === rock
             INCREMENT computerScore
-        IF humanChoice = rock and computerChoice = paper
+        IF humanChoice === rock and computerChoice === paper
             INCREMENT computerScore
-        IF humanChoice = paper and computerChoice = rock
+        IF humanChoice === paper and computerChoice === rock
             INCREMENT humanScore
-        IF humanChoice = paper and computerChoice = scissors
+        IF humanChoice === paper and computerChoice === scissors
             INCREMENT computerScore
-        IF humanChoice = scissors and computerChoice = paper
+        IF humanChoice === scissors and computerChoice === paper
             INCREMENT humanScore
         IF computerChoice === humanChoice
             DO NOT INCREMENT humanScore or computerScore
+            DO NOT INCREMENT roundCount (?)
     INCREMENT roundCount
 WHEN roundCount === 5
     IF humanScore > computerScore
